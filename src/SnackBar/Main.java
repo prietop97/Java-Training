@@ -1,4 +1,5 @@
 package SnackBar;
+import java.util.HashMap;
 
 class Main{
   public static void main(String[] args){
@@ -14,6 +15,11 @@ class Main{
     VendingMachine vm2 = new VendingMachine("Drink");
     VendingMachine vm3 = new VendingMachine("Office");
 
+    HashMap<Integer,String> allVm = new HashMap<Integer,String>();
+    allVm.put(vm1.getId(),vm1.getName());
+    allVm.put(vm2.getId(),vm2.getName());
+    allVm.put(vm3.getId(),vm3.getName());
+    System.out.println(allVm);
 
     /// SNACKS
     Snacks snack1 = new Snacks("Chips", 36 , 1.75 , vm1.getId());
@@ -21,6 +27,8 @@ class Main{
     Snacks snack3 = new Snacks("Pretzel", 30 , 2.00 , vm1.getId());
     Snacks snack4 = new Snacks("Soda", 24 , 2.50 , vm2.getId());
     Snacks snack5 = new Snacks("Water", 20 , 2.75 , vm2.getId());
+
+
 
     customer1.buy(snack4.totalCost(3)); //// CUSTOMER BUYS --> customer cash decreases
     snack4.buySnacks(3); //// Decreases snack ammount on machine
@@ -53,10 +61,11 @@ class Main{
     System.out.println(customer2.getCash()); // $22.14
     System.out.println(snack3.getQuantity()); //38
 
-    System.out.println(snack1);
-    System.out.println(snack2);
-    System.out.println(snack3);
-    System.out.println(snack4);
-    System.out.println(snack5);
+
+    System.out.println(snack1 + "\n" + "Vending Machine Name: " + allVm.get(snack1.getVendingMachineId()));
+    System.out.println(snack2 + "\n" + "Vending Machine Name: " + allVm.get(snack2.getVendingMachineId()));
+    System.out.println(snack3 + "\n" + "Vending Machine Name: " + allVm.get(snack3.getVendingMachineId()));
+    System.out.println(snack4 + "\n" + "Vending Machine Name: " + allVm.get(snack4.getVendingMachineId()));
+    System.out.println(snack5 + "\n" + "Vending Machine Name: " + allVm.get(snack5.getVendingMachineId()));
   }
 }
