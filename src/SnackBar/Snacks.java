@@ -63,6 +63,7 @@ class Snacks{
   }
 
 
+
   ////// METHODS
   public String buySnacks(int quantity){
     int quantityLeft = this.quantity - quantity;
@@ -70,9 +71,9 @@ class Snacks{
     return "You have bought " + quantity + " " + name + " and there are " + quantityLeft + " left";
   }
 
-  public String totalCost(int quantity){
+  public double totalCost(int quantity){
     double total = quantity * cost;
-    return "$" + total;
+    return total;
   }
 
   public String addSnacks(int quantity){
@@ -83,13 +84,12 @@ class Snacks{
 
 
 
+
   @Override
   public String toString(){
-    String rtnString = "id: " + id + "\n" +
-                      "name: " + name + "\n" +
+    String rtnString ="name: " + name + "\n" +
                       "quantity: " + quantity + "\n" +
-                      "cost: " + cost + "\n" +
-                      "vendingMachineId: " + vendingMachineId + "\n";
+                      "total cost: $" + quantity * cost + "\n";
     return rtnString;
   }
 }

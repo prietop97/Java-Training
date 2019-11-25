@@ -14,5 +14,24 @@ public class Customer{
     this.cash = cash;
   }
 
-  //// SETTERS
+  //// METHODS
+  public void addCash(double cash){
+    this.cash += cash;
+  }
+
+  public void buy(double total){
+    cash -= total;
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public double getCash(){
+    return cash;
+  }
 }
