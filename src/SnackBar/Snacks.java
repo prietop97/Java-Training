@@ -63,6 +63,25 @@ class Snacks{
   }
 
 
+  ////// METHODS
+  public String buySnacks(int quantity){
+    int quantityLeft = this.quantity - quantity;
+    this.quantity = quantityLeft;
+    return "You have bought " + quantity + " " + name + " and there are " + quantityLeft + " left";
+  }
+
+  public String totalCost(int quantity){
+    double total = quantity * cost;
+    return "$" + total;
+  }
+
+  public String addSnacks(int quantity){
+    int newTotal = this.quantity + quantity;
+    this.quantity = newTotal;
+    return "You have added " + quantity + " " + name + " and the new quantity is " + newTotal;
+  }
+
+
 
   ////// TO STRING 
 
