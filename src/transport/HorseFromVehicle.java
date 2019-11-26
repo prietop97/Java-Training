@@ -13,5 +13,20 @@ public class HorseFromVehicle extends AbstractVehicle{
     this.name = name;
   }
 
+  @Override
+  public String getPath(){
+    return "Grass";
+  }
+
+  @Override
+  public String getName(){
+    return this.name;
+  }
+
+  @Override
+  public String toString(){
+    return "HorseFromVehicle{" + "name= " + name + "\'" + ", fuel= " + fuel + "}";   
+  }
+
 
 }

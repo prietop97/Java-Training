@@ -14,6 +14,10 @@ public abstract class AbstractVehicle{
   public abstract String getPath();
   public abstract String getName();
 
+  public void move(int i){
+    fuel = fuel - i;
+  }
+
   public void move(){
     fuel--;
   }
