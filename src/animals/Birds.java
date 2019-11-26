@@ -9,17 +9,17 @@ public class  Birds extends Animals{
 
   @Override
   public String move(){
-    return "THE BIRDS FLY";
+    return "FLY";
   }
 
   @Override
   public String breath(){
-    return "THE BIRDS BREATH WITH LUNGS";
+    return "LUNGS";
   }
 
   @Override
-  public String repoduce(){
-    return "THE BIRDS REPRODUCE EGGS";
+  public String reproduce(){
+    return "EGGS";
   }
 
 

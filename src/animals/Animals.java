@@ -35,7 +35,7 @@ public abstract class Animals{
 
   public abstract String move();
   public abstract String breath();
-  public abstract String repoduce();
+  public abstract String reproduce();
 
   @Override
   public String toString(){

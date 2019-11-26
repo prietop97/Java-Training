@@ -3,6 +3,18 @@ import java.util.ArrayList;
 
 public class Main{
 
+  public static ArrayList<Animals> filteredAnimals = new ArrayList<Animals>();
+
+
+  public static void printAnimals(ArrayList<Animals> animals, Check tester){
+    filteredAnimals.clear();
+    for(Animals a: animals){
+      if(tester.test(a)){
+        filteredAnimals.add(a);
+        // System.out.println(a.getName() + "Was Discovered In " + a.getYearDiscovered());
+      }
+    }
+  }
   public static void main(String[] args){
     System.out.println("Hello World");
 
@@ -29,7 +41,46 @@ public class Main{
     animalsArr.add(new Fish("Catfish",1817));
     animalsArr.add(new Fish("Perch",1758));
 
+
+    System.out.println("***COLLECTION***");
     System.out.println(animalsArr);
+
+    System.out.println("***List all the animals in descending order by year named***");
+    animalsArr.sort((v1,v2) -> v1.getYearDiscovered() - v2.getYearDiscovered());
+    animalsArr.forEach((a)->System.out.println(a.getName() + " " + a.getYearDiscovered()));
+
+    System.out.println("***List all the animals alphabetically***");
+    animalsArr.sort((v1,v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+    animalsArr.forEach((a)->System.out.println(a.getName()));
+
+    System.out.println("***List all the animals order by how they move***");
+    animalsArr.sort((v1,v2) -> v1.move().compareToIgnoreCase(v2.move()));
+    animalsArr.forEach((a)->System.out.println(a.getName() + " " + a.move()));
+
+    System.out.println("***List only those animals the breath with lungs***");
+    printAnimals(animalsArr, (a) -> a.breath().toUpperCase().contains("luNgS".toUpperCase()));
+    filteredAnimals.forEach((a)->System.out.println(a.getName() + " " + a.breath()));
+
+    System.out.println("***List only those animals that breath with lungs and were named in 1758***");
+    printAnimals(animalsArr, (a) -> (a.breath().toUpperCase().contains("luNgS".toUpperCase())) && (a.getYearDiscovered() == 1758));
+    filteredAnimals.forEach((a)->System.out.println(a.getName() + " breaths with " + a.breath().toLowerCase() + " and was discovered in " + a.getYearDiscovered()));
+
+    System.out.println("***List only those animals that lay eggs and breath with lungs***");
+    printAnimals(animalsArr, (a) -> (a.reproduce().toUpperCase().contains("eggs".toUpperCase())) && (a.breath().toUpperCase().contains("luNgS".toUpperCase())));
+    filteredAnimals.forEach((a)->System.out.println(a.getName() + " breaths with " + a.breath().toLowerCase() + " and they lay " + a.reproduce()));
+
+    System.out.println("***List alphabetically only those animals that were named in 1758***");
+    printAnimals(animalsArr,(a) -> (a.getYearDiscovered() == 1758));
+    filteredAnimals.sort((a1,a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+    filteredAnimals.forEach(a -> System.out.println(a.getName() + " was discovered in " + a.getYearDiscovered() + " and are ordered alphabetically"));
+
+
+    /// STRETCH
+
+    
+
+
+  
 
   }
 }

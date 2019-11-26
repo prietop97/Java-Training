@@ -7,14 +7,19 @@ public class Fish extends Animals{
   }
 
 
+  @Override
   public String move(){
-    return "THE FISH SWIM";
+    return "SWIM";
   }
+
+  @Override
   public String breath(){
-    return "THE FISH BREATH WITH GILLS";
+    return "GILLS";
   }
-  public String repoduce(){
-    return "THE FISH REPRODUCE EGGS";
+
+  @Override
+  public String reproduce(){
+    return "EGGS";
   }
 
 
