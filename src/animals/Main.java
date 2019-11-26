@@ -76,8 +76,19 @@ public class Main{
 
 
     /// STRETCH
+    System.out.println("***For the list of animals, list alphabetically those animals that are mammals***");
+    // ArrayList<Animals> mammalsArr = new ArrayList<Animals>();
+    // for (Animals a: animalsArr){
+    //   if(a instanceof Mammals){
+    //     mammalsArr.add(a);
+    //   }
+    // }
+    printAnimals(animalsArr,(a) -> (a instanceof Mammals));
+    filteredAnimals.sort((a1,a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+    filteredAnimals.forEach(a -> System.out.println(a.getName() + " is a " + a.getClass()));
+      
 
-    
+
 
 
   
