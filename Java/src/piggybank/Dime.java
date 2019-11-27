@@ -9,6 +9,10 @@ public class Dime extends Money{
     this.ammount = 1;
   }
 
+  public double getValue(){
+    return this.ammount * 0.10;
+  }
+
   @Override
   public String toString(){
     if(ammount == 1){

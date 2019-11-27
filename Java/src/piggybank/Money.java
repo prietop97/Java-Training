@@ -9,4 +9,6 @@ public abstract class Money{
   public Money(){
     this.ammount = 1;
   }
+
+  public abstract double getValue();
 }

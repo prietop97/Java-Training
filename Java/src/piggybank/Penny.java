@@ -9,6 +9,10 @@ public class Penny extends Money{
     this.ammount = 1;
   }
 
+  public double getValue(){
+    return this.ammount * 0.01;
+  }
+
   @Override
   public String toString(){
     if(ammount == 1){

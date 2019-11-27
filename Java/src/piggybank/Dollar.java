@@ -9,6 +9,10 @@ public Dollar(int ammount){
     this.ammount = 1;
   }
 
+  public double getValue(){
+    return this.ammount * 1;
+  }
+
   @Override
   public String toString(){
       return "$" + ammount;

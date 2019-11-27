@@ -1,12 +1,21 @@
 package piggybank;
 
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class Main{
-    public static void main(String[] args){
+        public static ArrayList<Money> piggyBank = new ArrayList<>();
+        public static DecimalFormat fp = new DecimalFormat("$###,###.00");
+        
+        public static String getTotalValue(){
+            double totalValue = 0.0;
+            for(Money m: piggyBank){
+                totalValue = totalValue + m.getValue();
+            }
+            return "The piggy bank holds " + fp.format(totalValue);
+        }
+        public static void main(String[] args){
         System.out.println("Hello World");
-
-        ArrayList<Money> piggyBank = new ArrayList<>();
         piggyBank.add(new Quarter());
         piggyBank.add(new Dime());
         piggyBank.add(new Dollar(5));
@@ -17,5 +26,9 @@ public class Main{
         for(Money m: piggyBank){
             System.out.println(m);
         }
+
+        System.out.println(getTotalValue());
+
+        /// PRINT VALUE OF PIGGYBANK
     }
 }
