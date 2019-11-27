@@ -220,4 +220,13 @@ public class CountryList {
         }
         return filteredList;
     }
+
+    public Country findCountry(CountryFilter tester){
+        for(Country c: countryList){
+            if(tester.test(c)){
+                return c;
+            }
+        }
+        return null;
+    }
 }

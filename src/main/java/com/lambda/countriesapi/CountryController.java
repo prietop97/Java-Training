@@ -12,9 +12,6 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/names")
-
-///names/size/{number}
-//return the countries alphabetically that have a name equal to or longer than the given length
 public class CountryController {
     @GetMapping(value = "/all", produces = {"application/json"})
     public ResponseEntity<?> getAllCountries(){
