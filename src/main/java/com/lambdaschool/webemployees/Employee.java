@@ -21,6 +21,15 @@ public class Employee {
         this.companyID = companyID;
         this.healthPlanID = healthPlanID;
     }
+    public Employee(Employee toClone) {
+        this.id = toClone.getId();
+        this.fname = toClone.getFname();
+        this.lname = toClone.getLname();
+        this.salary = toClone.getSalary();
+        this.has401K = toClone.has401K;
+        this.companyID = toClone.getCompanyID();
+        this.healthPlanID = toClone.getHealthPlanID();
+    }
 
     public long getId() {
         return id;
@@ -77,6 +86,8 @@ public class Employee {
     public void setHealthPlanID(int healthPlanID) {
         this.healthPlanID = healthPlanID;
     }
+
+
 
     @Override
     public String toString() {
